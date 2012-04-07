@@ -30,24 +30,23 @@ class Xu4 < Formula
       # Copy over SDL's ObjC main files
       `cp -R #{Formula.factory('sdl').libexec}/* macosx`
 
-      inreplace "Makefile.macosx" do |s|
-        s.change_make_var! "SYSROOT", "/Developer/SDKs/MacOSX#{MACOS_VERSION}.sdk"
-        s.remove_make_var! "WHICH_ARCH"
-        s.change_make_var! "PREFIX", HOMEBREW_PREFIX
-        s.change_make_var! "BUNDLE_CONTENTS", "xu4.app/Contents"
-        s.change_make_var! "CC", ENV.cc
-        s.change_make_var! "CXX", ENV.cxx
+      if MacOS.xcode_version >= "4.3"
+        sdk = MacOS.xcode_prefix/"Platforms/MacOSX.platform/Developer/SDKs/MacOSX#{MACOS_VERSION}.sdk"
+      else
+        sdk = MacOS.xcode_prefix/"SDKs/MacOSX#{MACOS_VERSION}.sdk"
       end
+      args = %W[SYSROOT=#{sdk}
+      PREFIX=#{HOMEBREW_PREFIX}
+      CC=#{ENV.cc}
+      CXX=#{ENV.cxx}]
 
-      system "make -f Makefile.macosx"
-      system "make -f Makefile.macosx install"
-
-      prefix.install "xu4.app"
+      system "make", "bundle", "-f", "Makefile.macosx", *args
+      prefix.install "XU4.app"
     end
   end
 
   def caveats
-    "xu4.app installed to #{prefix}"
+    "XU4.app installed to #{prefix}"
   end
 end
 
