@@ -21,6 +21,11 @@ class Supertux < Formula
     md5 'f3f803e629ee51a9de0b366a036e393d'
   end
 
+  fails_with :clang do
+    build 318
+    cause "errors in squtils.h"
+  end if ARGV.build_devel?
+
   def patches
     # Patch from macports port
     # https://trac.macports.org/ticket/29635
