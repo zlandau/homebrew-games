@@ -34,7 +34,9 @@ class Supertux < Formula
 
   def install
     if ARGV.build_devel?
-      system "cmake . #{std_cmake_parameters} -DINSTALL_SUBDIR_BIN=bin -DINSTALL_SUBDIR_SHARE=share/supertux2"
+      args = std_cmake_args
+      args << '-DINSTALL_SUBDIR_BIN=bin' << 'DINSTALL_SUBDIR_SHARE=share/supertux2'
+      system "cmake", ".", *args
       system "make"
       bin.install ['supertux2']
       share.mkpath

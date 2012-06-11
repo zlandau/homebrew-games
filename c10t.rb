@@ -18,7 +18,7 @@ class C10t < Formula
   def install
     inreplace 'CMakeLists.txt', 'boost_thread', 'boost_thread-mt'
     inreplace 'test/CMakeLists.txt', 'boost_unit_test_framework', 'boost_unit_test_framework-mt'
-    system "cmake #{std_cmake_parameters} ."
+    system "cmake", ".", *std_cmake_args
     system "make"
     bin.install "c10t"
   end
