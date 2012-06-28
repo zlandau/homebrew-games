@@ -17,8 +17,8 @@ end
 
 class Openttd < Formula
   homepage 'http://www.openttd.org/'
-  url 'http://us.binaries.openttd.org/binaries/releases/1.2.0/openttd-1.2.0-source.tar.gz'
-  sha1 '6094f37c27fd8801c23c588b9945d14919b53132'
+  url 'http://binaries.openttd.org/releases/1.2.1/openttd-1.2.1-source.tar.gz'
+  sha1 'd2ef44b642f3888e7a51cc0023dfb63ef1832fbb'
 
   head 'git://git.openttd.org/openttd/trunk.git'
 
