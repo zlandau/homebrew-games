@@ -25,10 +25,6 @@ class Openttd < Formula
   depends_on 'lzo'
   depends_on 'xz'
 
-  fails_with :clang do
-    build 318
-  end
-
   def install
     system "./configure", "--prefix-dir=#{prefix}"
     system "make bundle"
