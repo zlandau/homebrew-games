@@ -5,6 +5,11 @@ class Pioneers < Formula
   homepage 'http://pio.sourceforge.net/'
   md5 'fd0c25382e7ebea0709c9464395739a2'
 
+  fails_with :clang do
+    build 318
+    cause "'#line directive requires a positive integer' argument in generated file"
+  end
+
   depends_on 'intltool' # for NLS
   depends_on 'gettext'
   depends_on 'gtk+'
