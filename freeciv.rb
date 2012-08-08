@@ -11,7 +11,10 @@ class Freeciv < Formula
   end
 
   depends_on 'pkg-config' => :build
-  depends_on "gtk+"
+  depends_on 'sdl'
+  depends_on 'sdl_image'
+  depends_on 'sdl_mixer'
+  depends_on :x11
   depends_on "gettext" unless ARGV.include? "--disable-nls"
 
   def install
