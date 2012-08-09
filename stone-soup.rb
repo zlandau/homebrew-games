@@ -19,11 +19,11 @@ class StoneSoup < Formula
       inreplace "makefile" do |s|
         s.gsub!(
           "CC = $(GCC) -arch $(ARCH) -isysroot $(SDKROOT) -mmacosx-version-min=$(SDK_VER)",
-          "CC = #{ENV.cc} -arch #{target_arch} -isysroot #{MacOS.xcode_prefix}/SDKs/MacOSX#{MACOS_VERSION}.sdk -mmacosx-version-min=#{MACOS_VERSION}"
+          "CC = #{ENV.cc} -arch #{target_arch} -isysroot #{MacOS::Xcode.prefix}/SDKs/MacOSX#{MACOS_VERSION}.sdk -mmacosx-version-min=#{MACOS_VERSION}"
           )
         s.gsub!(
           "CXX = $(GXX) -arch $(ARCH) -isysroot $(SDKROOT) -mmacosx-version-min=$(SDK_VER)",
-          "CXX = #{ENV.cxx} -arch #{target_arch} -isysroot #{MacOS.xcode_prefix}/SDKs/MacOSX#{MACOS_VERSION}.sdk -mmacosx-version-min=#{MACOS_VERSION}"
+          "CXX = #{ENV.cxx} -arch #{target_arch} -isysroot #{MacOS::Xcode.prefix}/SDKs/MacOSX#{MACOS_VERSION}.sdk -mmacosx-version-min=#{MACOS_VERSION}"
           )
       end
       system "make", "prefix=#{prefix}", "SAVEDIR=saves/", "DATADIR=data/", "install"
