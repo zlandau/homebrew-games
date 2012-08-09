@@ -10,11 +10,8 @@ class Exult < Formula
   depends_on 'sdl'
   depends_on 'sdl_mixer'
   depends_on 'libvorbis'
-
-  if MacOS.xcode_version >= "4.3"
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on :automake
+  depends_on :libtool
 
   def install
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
