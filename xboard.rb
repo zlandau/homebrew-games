@@ -8,11 +8,12 @@ class Xboard < Formula
 
   depends_on 'pkg-config' => :build
   depends_on 'gettext'
+  depends_on :x11
 
   def install
     args = ["--prefix=#{prefix}",
-            "--x-include=/usr/X11/include",
-            "--x-lib=/usr/X11/lib",
+            "--x-include=#{MacOS::X11.include}",
+            "--x-lib=#{MacOS::X11.lib}",
             "--disable-zippy"]
 
     system "./configure", *args

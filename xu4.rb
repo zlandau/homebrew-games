@@ -10,14 +10,13 @@ class Xu4 < Formula
 
   depends_on 'sdl'
   depends_on 'sdl_mixer'
+  depends_on :x11
 
   def patches
     DATA
   end
 
   def install
-    ENV.x11
-
     ultima_zips = [
       "http://www.thatfleminggent.com/ultima/ultima4.zip",
       "http://downloads.sourceforge.net/project/xu4/Ultima%204%20VGA%20Upgrade/1.3/u4upgrad.zip"
