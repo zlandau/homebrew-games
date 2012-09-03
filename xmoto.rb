@@ -1,9 +1,9 @@
 require 'formula'
 
 class Xmoto < Formula
-  url 'http://download.tuxfamily.org/xmoto/xmoto/0.5.9/xmoto-0.5.9-src.tar.gz'
+  url 'http://download.tuxfamily.org/xmoto/xmoto/0.5.10/xmoto-0.5.10-src.tar.gz'
   homepage 'http://xmoto.tuxfamily.org/'
-  sha1 '07757accce78151dc8873bef8270df0e56196772'
+  sha1 '692d50a9c91791cd06ee84846632651b44544fcc'
 
   depends_on 'libxml2'
   depends_on 'gettext'
