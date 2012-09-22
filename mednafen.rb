@@ -6,9 +6,12 @@ class Mednafen < Formula
   sha1 'bc0d867a3fa255f01d04ee6f028acab18849f16d'
   version '0.9.24-WIP'
 
-  # as of xcode 4.4, building with clang still fails
   fails_with :clang do
     build 421
+    cause <<-EOS.undent
+    The SNES module fails to build with clang; in addition, the mednafen
+    binary segfaults when a game launches if compiled without SNES support.
+    EOS
   end
 
   depends_on 'pkg-config' => :build
