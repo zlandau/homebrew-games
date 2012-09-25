@@ -17,13 +17,14 @@ end
 
 class Openttd < Formula
   homepage 'http://www.openttd.org/'
-  url 'http://binaries.openttd.org/releases/1.2.1/openttd-1.2.1-source.tar.gz'
-  sha1 'd2ef44b642f3888e7a51cc0023dfb63ef1832fbb'
+  url 'http://binaries.openttd.org/releases/1.2.2/openttd-1.2.2-source.tar.gz'
+  sha1 '216e404489faa4f8ccc026a2c2b5f695494e7d4a'
 
   head 'git://git.openttd.org/openttd/trunk.git'
 
   depends_on 'lzo'
   depends_on 'xz'
+  depends_on 'pkg-config' => :build
 
   def install
     system "./configure", "--prefix-dir=#{prefix}"
