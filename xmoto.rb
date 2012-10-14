@@ -14,6 +14,7 @@ class Xmoto < Formula
   depends_on 'sdl_ttf'
   depends_on 'lua'
   depends_on 'ode'
+  depends_on :libpng
 
   # Fixes compiling against libpng on Lion. See:
   # http://todo.xmoto.tuxfamily.org/index.php?do=details&task_id=783
@@ -22,8 +23,6 @@ class Xmoto < Formula
   end
 
   def install
-    # The ENV.x11 picks up libpng and sets CFLAGS and LDFLAGS
-    ENV.x11
     system "./configure", "--prefix=#{prefix}",
                           "--disable-sdltest",
                           "--with-internal-xdg=1",
