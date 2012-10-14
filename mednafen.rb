@@ -2,9 +2,9 @@ require 'formula'
 
 class Mednafen < Formula
   homepage 'http://mednafen.sourceforge.net/'
-  url 'http://forum.fobby.net/index.php?t=getfile&id=380'
-  sha1 'bc0d867a3fa255f01d04ee6f028acab18849f16d'
-  version '0.9.24-WIP'
+  url 'http://forum.fobby.net/index.php?t=getfile&id=405'
+  sha1 'f5e7b029cdae6a9d9f02a0f719e9f33e4ec96348'
+  version '0.9.25-WIP'
 
   fails_with :clang do
     build 421
