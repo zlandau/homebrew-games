@@ -1,16 +1,16 @@
 require 'formula'
 
 class Dosbox < Formula
-  url 'http://downloads.sourceforge.net/project/dosbox/dosbox/0.74/dosbox-0.74.tar.gz'
   homepage 'http://www.dosbox.com/'
-  md5 'b9b240fa87104421962d14eee71351e8'
+  url 'http://downloads.sourceforge.net/project/dosbox/dosbox/0.74/dosbox-0.74.tar.gz'
+  sha1 '2d99f0013350efb29b769ff19ddc8e4d86f4e77e'
 
+  depends_on :libpng
   depends_on 'sdl'
   depends_on 'sdl_net'
   depends_on 'sdl_sound'
 
   def install
-    ENV.libpng
     ENV.fast
 
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
