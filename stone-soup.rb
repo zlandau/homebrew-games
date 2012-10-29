@@ -1,32 +1,15 @@
 require 'formula'
 
 class StoneSoup < Formula
-  homepage 'http://crawl.develz.org/wordpress/'
-  url 'http://sourceforge.net/projects/crawl-ref/files/Stone%20Soup/0.7.2/stone_soup-0.7.2.tar.bz2'
-  md5 'ffb54c88d280f036a3819cba23bc4489'
+  homepage 'http://crawl.develz.org/'
+  url 'http://sourceforge.net/projects/crawl-ref/files/Stone%20Soup/0.11.0/stone_soup-0.11.0.tar.xz'
+  sha1 '5a4674b0ee032040d49c5f23a2f215b957b06440'
 
-  # Keep empty folders for save games and such
-  skip_clean :all
+  depends_on 'xz' => :build
 
   def install
     cd "source" do
-      # Hacks here by Adam V (@flangy) aided by @mistydemeo
-      # Arch / SDK detection is somewhat bogus: 32 vs 64-bit is detected wrong
-      # and the 10.4 SDK is selected too aggressively.
-      # Fix up what it detects
-      target_arch = MacOS.prefer_64_bit? ? "x86_64" : "i386"
-
-      inreplace "makefile" do |s|
-        s.gsub!(
-          "CC = $(GCC) -arch $(ARCH) -isysroot $(SDKROOT) -mmacosx-version-min=$(SDK_VER)",
-          "CC = #{ENV.cc} -arch #{target_arch} -isysroot #{MacOS::Xcode.prefix}/SDKs/MacOSX#{MACOS_VERSION}.sdk -mmacosx-version-min=#{MACOS_VERSION}"
-          )
-        s.gsub!(
-          "CXX = $(GXX) -arch $(ARCH) -isysroot $(SDKROOT) -mmacosx-version-min=$(SDK_VER)",
-          "CXX = #{ENV.cxx} -arch #{target_arch} -isysroot #{MacOS::Xcode.prefix}/SDKs/MacOSX#{MACOS_VERSION}.sdk -mmacosx-version-min=#{MACOS_VERSION}"
-          )
-      end
-      system "make", "prefix=#{prefix}", "SAVEDIR=saves/", "DATADIR=data/", "install"
+      system "make", "prefix=#{prefix}", "DATADIR=data/", "install"
     end
   end
 end
