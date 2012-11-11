@@ -6,7 +6,14 @@ class Frobtads < Formula
   sha1 'd3e66d17a36f2084b878cfa752d337ded013211b'
   head 'git://git.assembla.com/frobtads.git'
 
+  if build.head?
+    depends_on :autoconf
+    depends_on :automake
+    depends_on :libtool
+  end
+
   def install
+    system "./bootstrap" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make install"
