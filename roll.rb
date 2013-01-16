@@ -10,4 +10,8 @@ class Roll < Formula
                           "--prefix=#{prefix}"
     system "make install"
   end
+
+  test do
+    system "#{bin}/roll", "1d6"
+  end
 end
