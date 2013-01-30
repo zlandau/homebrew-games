@@ -6,8 +6,12 @@ class Abuse < Formula
   head 'svn://svn.zoy.org/abuse/abuse/trunk'
   sha1 '12fea968a1494338ad71c6ec24954f3eef56826a'
 
+  depends_on 'autoconf' => :build
+  depends_on 'automake' => :build
+  depends_on 'libtool' => :build
   depends_on 'pkg-config' => :build
   depends_on 'sdl'
+  depends_on 'sdl_mixer'
   depends_on 'libvorbis'
 
   def startup_script; <<-EOS.undent
@@ -17,6 +21,9 @@ class Abuse < Formula
   end
 
   def install
+    # Hack to work with newer versions of automake
+    inreplace 'bootstrap', '11 10 9 8 7 6 5', '$(seq -s " " 5 99)'
+
     # Add SDL.m4 to aclocal includes
     inreplace 'bootstrap', 'aclocal${amvers} ${aclocalflags}',
       'aclocal${amvers} ${aclocalflags} -I/usr/local/share/aclocal'
@@ -24,6 +31,9 @@ class Abuse < Formula
     # undefined
     inreplace 'src/net/fileman.cpp', 'ushort', 'unsigned short'
     inreplace 'src/sdlport/setup.cpp', 'UInt8', 'uint8_t'
+
+    # Fix autotools obsoletion notice
+    inreplace 'configure.ac', 'AM_CONFIG_HEADER', 'AC_CONFIG_HEADERS'
 
     # Re-enable OpenGL detection
     inreplace 'configure.ac',
