@@ -4,6 +4,7 @@ class Unnethack < Formula
   homepage 'http://sourceforge.net/apps/trac/unnethack/'
   url 'https://downloads.sourceforge.net/project/unnethack/unnethack/4.0.0/unnethack-4.0.0-20120401.tar.gz'
   sha1 'c7415284b27a585024b56858c87e927b36bc6ad5'
+
   head 'http://unnethack.svn.sourceforge.net/svnroot/unnethack/trunk'
 
   # directory for temporary level data of running games
@@ -25,6 +26,7 @@ class Unnethack < Formula
                           "--with-bonesdir=#{version_specific_directory}/bones",
                           "--with-savesdir=#{version_specific_directory}/saves",
                           "--enable-wizmode=#{`id -un`}"
+    ENV.j1 # Race condition in make
     system "make install"
   end
 end
