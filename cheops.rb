@@ -3,7 +3,7 @@ require 'formula'
 class Cheops < Formula
   homepage 'http://en.nothingisreal.com/wiki/CHEOPS'
   url 'http://files.nothingisreal.com/software/cheops/cheops-1.1.tar.bz2'
-  md5 'ced2dba9d0d6de77d538e04ff2909969'
+  sha1 'c2d2fd271134ca12cacf31ccd95aa5bce4c279b8'
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

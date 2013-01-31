@@ -3,7 +3,7 @@ require 'formula'
 class ChocolateDoom < Formula
   url 'http://downloads.sourceforge.net/project/chocolate-doom/chocolate-doom/1.6.0/chocolate-doom-1.6.0.tar.gz'
   homepage 'http://www.chocolate-doom.org/'
-  md5 'b210e115dda6ea88bfb6c4fe11ade101'
+  sha1 '081ebac89996072b5bbfc3a572b16044ab2fc790'
 
   depends_on 'sdl'
   depends_on 'sdl_net'

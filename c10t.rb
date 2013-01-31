@@ -3,7 +3,7 @@ require 'formula'
 class C10t < Formula
   homepage 'https://github.com/udoprog/c10t'
   url 'https://github.com/udoprog/c10t/tarball/1.7'
-  md5 '8ba305e2c274469eb8e709f5c68e0c56'
+  sha1 'ed4128190ab4ffeaa24a4f8430e5bcbf7e44af73'
 
   depends_on 'cmake' => :build
   depends_on 'boost'

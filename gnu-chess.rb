@@ -4,7 +4,7 @@ class GnuChess < Formula
   homepage 'http://www.gnu.org/software/chess/'
   url 'http://ftpmirror.gnu.org/chess/gnuchess-6.0.1.tar.gz'
   mirror 'http://ftp.gnu.org/gnu/chess/gnuchess-6.0.1.tar.gz'
-  md5 '041888218f73886f146fa7fbf92190de'
+  sha1 '4127c843a8c78c329e1947734a2569d30dfb0eb2'
 
   def install
     # Opening book for gnuchess.  This can be put in the doc directory and the

@@ -2,8 +2,8 @@ require 'formula'
 
 class Supertux < Formula
   homepage 'http://supertux.lethargik.org/'
-  url 'http://download.berlios.de/supertux/supertux-0.1.3.tar.bz2'
-  md5 'f2fc288459f33d5cd8f645fbca737a63'
+  url 'http://downloads.sf.net/project/supertux.berlios/supertux-0.1.3.tar.bz2'
+  sha1 'ad783011fbf15a8a56ca8680769a8c2a15abc515'
 
   depends_on 'sdl'
   depends_on 'sdl_image'
@@ -17,8 +17,8 @@ class Supertux < Formula
   depends_on 'boost' if ARGV.build_devel?
 
   devel do
-    url 'http://download.berlios.de/supertux/supertux-0.3.3.tar.bz2'
-    md5 'f3f803e629ee51a9de0b366a036e393d'
+    url 'http://downloads.sf.net/project/supertux.berlios/supertux-0.3.3.tar.bz2'
+    sha1 'f89214fd5d997b62753fbba7e1d089d81513f2de'
   end
 
   fails_with :clang do

@@ -3,7 +3,7 @@ require 'formula'
 class Pioneers < Formula
   url 'https://downloads.sourceforge.net/project/pio/Source/pioneers-0.12.5.tar.gz'
   homepage 'http://pio.sourceforge.net/'
-  md5 'fd0c25382e7ebea0709c9464395739a2'
+  sha1 'bade508cb2f1a59ea1d0bcdd9cd7a93e77f4b95c'
 
   fails_with :clang do
     build 318

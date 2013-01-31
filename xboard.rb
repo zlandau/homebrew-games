@@ -4,7 +4,7 @@ class Xboard < Formula
   url 'http://ftpmirror.gnu.org/xboard/xboard-4.6.0.tar.gz'
   mirror 'http://ftp.gnu.org/gnu/xboard/xboard-4.6.0.tar.gz'
   homepage 'http://www.gnu.org/software/xboard/'
-  md5 '80b445539bef9950cbc2df9ed8f21f0d'
+  sha1 '3adf6112193a656d745859b64918243d619c287c'
 
   depends_on 'pkg-config' => :build
   depends_on 'gettext'

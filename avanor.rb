@@ -3,7 +3,7 @@ require 'formula'
 class Avanor < Formula
   url 'http://downloads.sourceforge.net/project/avanor/avanor/0.5.8/avanor-0.5.8-src.tar.bz2'
   homepage 'http://avanor.sourceforge.net/'
-  md5 '20067962b9635b1789933ddd7933d142'
+  sha1 '5685ca96a203a7f7ada733dc34b18faab440d189'
 
   def install
     inreplace 'Makefile' do |s|

@@ -2,7 +2,7 @@ require 'formula'
 
 class Angband < Formula
   url 'http://rephial.org/downloads/3.0/angband-3.0.9b-src.tar.gz'
-  md5 '51a24fe3119e7eff8a8395d601b2747e'
+  sha1 '28debdaf1f840ed15dc76e375da64517320a9c17'
   homepage 'http://rephial.org/'
 
   def install

@@ -15,7 +15,7 @@ class Nethack < Formula
   homepage 'http://www.nethack.org/index.html'
   url 'http://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz'
   version '3.4.3'
-  md5 '21479c95990eefe7650df582426457f9'
+  sha1 'c26537093c38152bc0fbcec20468d975b35f59fd'
 
   fails_with_llvm :build => 2334
 

@@ -2,7 +2,7 @@ require 'formula'
 
 class Exult < Formula
   url 'https://downloads.sourceforge.net/project/exult/exult-all-versions/1.4.9rc1/exult-1.4.9rc1.tar.gz'
-  md5 'c17a48cc0377aa67264aaaf441cb1bb2'
+  sha1 '259f778d6b8b5e9c9466e2f4967b6352435b6792'
   homepage 'http://exult.sourceforge.net/'
 
   head 'http://exult.svn.sourceforge.net/svnroot/exult/exult/trunk'

@@ -4,7 +4,7 @@ class Abuse < Formula
   homepage 'http://abuse.zoy.org/'
   url 'http://abuse.zoy.org/raw-attachment/wiki/download/abuse-0.8.tar.gz'
   head 'svn://svn.zoy.org/abuse/abuse/trunk'
-  md5 'ec678b8dc8d00e0382d8c805c6438489'
+  sha1 '12fea968a1494338ad71c6ec24954f3eef56826a'
 
   depends_on 'pkg-config' => :build
   depends_on 'sdl'

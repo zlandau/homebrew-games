@@ -2,7 +2,7 @@ require 'formula'
 
 class OpenTyrianData < Formula
   url 'http://sites.google.com/a/camanis.net/opentyrian/tyrian/tyrian21.zip'
-  md5 '2a3b206a6de25ed4b771af073f8ca904'
+  sha1 '29827de99c92cdba7ac8d8b1307776c8f473cd44'
 end
 
 class OpenTyrian < Formula

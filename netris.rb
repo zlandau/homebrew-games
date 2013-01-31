@@ -5,7 +5,7 @@ class Netris < Formula
   homepage 'http://www.netris.org/'
   url 'ftp://ftp.netris.org/pub/netris/netris-0.52.tar.gz'
   mirror 'http://ftp.de.debian.org/debian/pool/main/n/netris/netris_0.52.orig.tar.gz'
-  md5 'b55af5697175ee06f7c6e40101979c38'
+  sha1 '5a51f68ccb6c09fbd3a940f57d0ded52c3d3a535'
 
   # Debian has been applying fixes and security patches, so let's re-use their work.
   # Also fixes case of "TERM=xterm-color256" which otherwise segfaults.
