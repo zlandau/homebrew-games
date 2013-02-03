@@ -30,9 +30,9 @@ class Xu4 < Formula
       `cp -R #{Formula.factory('sdl').libexec}/* macosx`
 
       if MacOS::Xcode.version >= "4.3"
-        sdk = MacOS::Xcode.prefix/"Platforms/MacOSX.platform/Developer/SDKs/MacOSX#{MACOS_VERSION}.sdk"
+        sdk = MacOS::Xcode.prefix/"Platforms/MacOSX.platform/Developer/SDKs/MacOSX#{MacOS.version}.sdk"
       else
-        sdk = MacOS::Xcode.prefix/"SDKs/MacOSX#{MACOS_VERSION}.sdk"
+        sdk = MacOS::Xcode.prefix/"SDKs/MacOSX#{MacOS.version}.sdk"
       end
       args = %W[SYSROOT=#{sdk}
       PREFIX=#{HOMEBREW_PREFIX}
