@@ -12,9 +12,11 @@ class Supertux < Formula
   depends_on 'libogg'
   depends_on 'libvorbis'
 
-  depends_on 'cmake' => :build if ARGV.build_devel?
-  depends_on 'glew' if ARGV.build_devel?
-  depends_on 'boost' if ARGV.build_devel?
+  if build.devel?
+    depends_on 'cmake' => :build
+    depends_on 'glew'
+    depends_on 'boost'
+  end
 
   devel do
     url 'http://downloads.sf.net/project/supertux.berlios/supertux-0.3.3.tar.bz2'
@@ -24,16 +26,16 @@ class Supertux < Formula
   fails_with :clang do
     build 318
     cause "errors in squtils.h"
-  end if ARGV.build_devel?
+  end if build.devel?
 
   def patches
     # Patch from macports port
     # https://trac.macports.org/ticket/29635
-    { :p0 => DATA } if not ARGV.build_devel?
+    { :p0 => DATA } if not build.devel?
   end
 
   def install
-    if ARGV.build_devel?
+    if build.devel?
       args = std_cmake_args
       args << '-DINSTALL_SUBDIR_BIN=bin' << 'DINSTALL_SUBDIR_SHARE=share/supertux2'
       system "cmake", ".", *args
