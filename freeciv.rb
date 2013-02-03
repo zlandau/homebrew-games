@@ -6,22 +6,20 @@ class Freeciv < Formula
   sha1 '9d9ee9f48f4c945fc6525139d340443d5a25aac4'
   head 'svn://svn.gna.org/svn/freeciv/trunk', :using => :svn
 
-  def options
-     [['--disable-nls', 'Disable NLS support.']]
-  end
+  option 'disable-nls', 'Disable NLS support'
 
   depends_on 'pkg-config' => :build
   depends_on 'sdl'
   depends_on 'sdl_image'
   depends_on 'sdl_mixer'
   depends_on :x11
-  depends_on "gettext" unless ARGV.include? "--disable-nls"
+  depends_on 'gettext' unless build.include? 'disable-nls'
 
   def install
     args = ["--disable-debug", "--disable-dependency-tracking",
             "--prefix=#{prefix}"]
 
-    unless ARGV.include? '--disable-nls'
+    unless build.include? 'disable-nls'
       gettext = Formula.factory('gettext')
       args << "CFLAGS=-I#{gettext.include}"
       args << "LDFLAGS=-L#{gettext.lib}"
