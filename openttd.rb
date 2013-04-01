@@ -1,8 +1,8 @@
 require 'formula'
 
 class Opengfx < Formula
-  url 'http://bundles.openttdcoop.org/opengfx/releases/0.4.4/opengfx-0.4.4.zip'
-  sha1 'c68cdbb1ee8980a44feff320288e466d06efcd19'
+  url 'http://bundles.openttdcoop.org/opengfx/releases/0.4.6.1/opengfx-0.4.6.1.zip'
+  sha1 'e48e1f9b9f95ca6b923de94b458376b3712c25b2'
 end
 
 class Opensfx < Formula
@@ -17,8 +17,8 @@ end
 
 class Openttd < Formula
   homepage 'http://www.openttd.org/'
-  url 'http://binaries.openttd.org/releases/1.2.3/openttd-1.2.3-source.tar.gz'
-  sha1 '5b8143b79915403a16783b727a440ce30e68c74a'
+  url 'http://binaries.openttd.org/releases/1.3.0/openttd-1.3.0-source.tar.gz'
+  sha1 '929c1ceadf428f3357c38da85c748e0a86e475b5'
 
   head 'git://git.openttd.org/openttd/trunk.git'
 
