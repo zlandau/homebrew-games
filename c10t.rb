@@ -2,8 +2,8 @@ require 'formula'
 
 class C10t < Formula
   homepage 'https://github.com/udoprog/c10t'
-  url 'https://github.com/udoprog/c10t/tarball/1.7'
-  sha1 'ed4128190ab4ffeaa24a4f8430e5bcbf7e44af73'
+  url 'https://github.com/udoprog/c10t/archive/1.7.tar.gz'
+  sha1 '1419b0abd42b05c82cde39d02b4ffce1e77265d1'
 
   depends_on 'cmake' => :build
   depends_on 'boost'

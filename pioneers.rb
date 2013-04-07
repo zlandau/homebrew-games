@@ -10,7 +10,7 @@ class Pioneers < Formula
     cause "'#line directive requires a positive integer' argument in generated file"
   end
 
-  depends_on 'intltool' # for NLS
+  depends_on 'intltool' => :build
   depends_on 'gettext'
   depends_on 'gtk+'
   depends_on 'librsvg' # svg images for gdk-pixbuf
