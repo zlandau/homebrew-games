@@ -1,13 +1,16 @@
 require 'formula'
 
 class Xboard < Formula
-  url 'http://ftpmirror.gnu.org/xboard/xboard-4.6.0.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/xboard/xboard-4.6.0.tar.gz'
+  url 'http://ftpmirror.gnu.org/xboard/xboard-4.7.0.tar.gz'
+  mirror 'http://ftp.gnu.org/gnu/xboard/xboard-4.7.0.tar.gz'
   homepage 'http://www.gnu.org/software/xboard/'
-  sha1 '3adf6112193a656d745859b64918243d619c287c'
+  sha1 '814597b4f7845a582e63f01c8c6517ad42dac7c4'
 
   depends_on 'pkg-config' => :build
+  depends_on 'fairymax' => :recommended
   depends_on 'gettext'
+  depends_on 'cairo'
+  depends_on 'librsvg'
   depends_on :x11
 
   def install
