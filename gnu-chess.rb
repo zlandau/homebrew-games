@@ -2,9 +2,9 @@ require 'formula'
 
 class GnuChess < Formula
   homepage 'http://www.gnu.org/software/chess/'
-  url 'http://ftpmirror.gnu.org/chess/gnuchess-6.0.1.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/chess/gnuchess-6.0.1.tar.gz'
-  sha1 '4127c843a8c78c329e1947734a2569d30dfb0eb2'
+  url 'http://ftpmirror.gnu.org/chess/gnuchess-6.0.3.tar.gz'
+  mirror 'http://ftp.gnu.org/gnu/chess/gnuchess-6.0.3.tar.gz'
+  sha1 'd38a54c22cf6232447654dcd52def482e0a48787'
 
   def install
     # Opening book for gnuchess.  This can be put in the doc directory and the
