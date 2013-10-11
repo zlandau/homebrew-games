@@ -9,7 +9,12 @@ class StoneSoup < Formula
 
   def install
     cd "source" do
-      system "make", "prefix=#{prefix}", "DATADIR=data/", "install"
+      # The makefile has trouble locating the developer tools for
+      # CLT-only systems, so we set these manually. Reported upstream:
+      # https://crawl.develz.org/mantis/view.php?id=7625
+      system "make", "install", "prefix=#{prefix}", "DATADIR=data/",
+        "DEVELOPER_DIR=#{MacOS::Xcode.prefix}", "SDKROOT=#{MacOS.sdk_path}",
+        "SDK_VER=#{MacOS.version}"
     end
   end
 end
