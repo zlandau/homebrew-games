@@ -8,12 +8,21 @@ class StoneSoup < Formula
   depends_on 'xz' => :build
 
   def install
+    # Numerous template issues building under libc++
+    ENV.libstdcxx
+
     cd "source" do
       # The makefile has trouble locating the developer tools for
       # CLT-only systems, so we set these manually. Reported upstream:
       # https://crawl.develz.org/mantis/view.php?id=7625
+      #
+      # On 10.9, stone-soup will try to use xcrun and fail due to an empty
+      # DEVELOPER_DIR
+      devdir = MacOS::Xcode.prefix.to_s
+      devdir += '/' if MacOS.version >= :mavericks && !MacOS::Xcode.installed?
+
       system "make", "install", "prefix=#{prefix}", "DATADIR=data/",
-        "DEVELOPER_DIR=#{MacOS::Xcode.prefix}", "SDKROOT=#{MacOS.sdk_path}",
+        "DEVELOPER_DIR=#{devdir}", "SDKROOT=#{MacOS.sdk_path}",
         "SDK_VER=#{MacOS.version}"
     end
   end
